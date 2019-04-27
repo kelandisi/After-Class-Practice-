@@ -1,0 +1,14 @@
+﻿生成启动时间为 2019/4/27 16:48:13。
+     1>项目“E:\比特科技\代码\Reverse_print\Reverse_print\Reverse_print.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\vs2015\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt text.c
+         text.c
+     1>e:\比特科技\代码\reverse_print\reverse_print\text.c(7): warning C4098: “reverse”:“void”函数返回值
+       Link:
+         D:\vs2015\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\比特科技\代码\Reverse_print\Debug\Reverse_print.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"E:\比特科技\代码\Reverse_print\Debug\Reverse_print.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\比特科技\代码\Reverse_print\Debug\Reverse_print.lib" /MACHINE:X86 Debug\text.obj
+         Reverse_print.vcxproj -> E:\比特科技\代码\Reverse_print\Debug\Reverse_print.exe
+     1>已完成生成项目“E:\比特科技\代码\Reverse_print\Reverse_print\Reverse_print.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:00.41
