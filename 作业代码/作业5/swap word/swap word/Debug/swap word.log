@@ -1,0 +1,13 @@
+﻿生成启动时间为 2019/4/10 17:24:50。
+     1>项目“E:\比特科技\代码\swap word\swap word\swap word.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\vs2015\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt text_3.c
+         text_3.c
+       Link:
+         D:\vs2015\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\比特科技\代码\swap word\Debug\swap word.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"E:\比特科技\代码\swap word\Debug\swap word.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\比特科技\代码\swap word\Debug\swap word.lib" /MACHINE:X86 Debug\text_3.obj
+         swap word.vcxproj -> E:\比特科技\代码\swap word\Debug\swap word.exe
+     1>已完成生成项目“E:\比特科技\代码\swap word\swap word\swap word.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:00.39
