@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{37441081-590C-4121-A72F-49993379B6B2}</ProjectGuid>
-    <RootNamespace>YangHuiTriangle</RootNamespace>
+    <ProjectGuid>{138AEC8E-882A-44D1-9571-9A97FB3A798E}</ProjectGuid>
+    <RootNamespace>Yang_Hui</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
