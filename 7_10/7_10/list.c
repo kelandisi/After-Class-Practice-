@@ -1,55 +1,79 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include"list.h"
-Node * ListPushBack(Node *head, int val)				//尾插
+void Print(Node* head)						//利用cur遍历链表
 {
-	Node * node = (Node*)malloc(sizeof(Node));
+	Node* cur = head;
+	while (cur != NULL)
+	{
+		printf("%d-->", cur->val);
+		cur = cur->next;	
+	}
+	printf("NULL\n");
+}
+Node* FrontPush(Node* head, int val)		//头插 o（1）
+{
+	Node* node = (Node*)malloc(sizeof(Node));
+	node->val = val;
+	node->next = head;
+	return node;
+}
+Node* BackPush(Node* head, int val)			//尾插 o（1）
+{
+	Node* node = (Node*)malloc(sizeof(Node));
 	node->val = val;
 	node->next = NULL;
-	if (head == NULL)			//链表中没有结点
+	if (head == NULL)
 	{
-		return node;			//直接返回node
+		head = node;
 	}
 	else
 	{
-		Node* last = head;
-		while (last->next!=NULL)
+		Node*last = head;
+		while (last->next != NULL)
 		{
 			last = last->next;
 		}
 		last->next = node;
-		return head;
 	}
+	return head;
 }
-Node * ListPushFront(Node *head, int val)				//头插
+Node* FrontPop(Node* head)						//头删
 {
-	Node * node = (Node*)malloc(sizeof(Node));			//建立结点
-	node->val = val;									//装入结点
-	node->next = head;
-	return node;
+	assert(head != NULL);
+	Node* next = head->next;
+	free(head);
+	return next;
 }
-void PrintList(Node* head)								//打印链表				
+Node* BackPop(Node* head)						//尾删
 {
-	for (Node* cur = head; cur != NULL; cur = cur->next)//用cur来遍历
+	assert(head != NULL);
+	if (head->next == NULL)
 	{
-		printf("%d-->", cur->val);
+		free(head);
+		head = NULL;
 	}
-	printf("NILL\n");
-}
-
-struct Node* reverseList(struct Node* head)				//逆置链表
-{
-	struct Node* rHead = NULL;
-	struct Node* cur = head;
-	while (cur!=NULL)
+	else
 	{
-		Node*next = cur->next;
+		Node* cur = head;
+		while (cur->next->next != NULL)
+		{
+			cur = cur->next;
+		}
+		free(cur->next);
+		cur->next = NULL;
+	}
+	return head;
+}
+Node* reverseList(Node* head)
+{
+	Node* rHead = NULL;
+	Node* cur = head;
+	while (cur != NULL)
+	{
+		Node* next = cur->next;
 		cur->next = rHead;
 		rHead = cur;
 		cur = next;
 	}
 	return rHead;
 }
-
-
-
-

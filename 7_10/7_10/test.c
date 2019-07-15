@@ -3,19 +3,20 @@
 void test()
 {
 	Node* head = NULL;
-	head = ListPushFront(head, 3);
-	PrintList(head);
-	head = ListPushFront(head, 2);
-	PrintList(head);
-	head = ListPushFront(head, 1);
-	PrintList(head);
-	head = ListPushBack(head,  4);
-	head = ListPushBack(head,  5);
-	head = ListPushBack(head,  6);
-	PrintList(head);
-	head = reverseList(head);			
-	PrintList(head);
-
+	head = FrontPush(head, 3);
+	head = FrontPush(head, 2);
+	head = FrontPush(head, 1);
+	Print(head);
+	head = BackPush(head, 4);
+	head = BackPush(head, 5);
+	head = BackPush(head, 6);
+	Print(head);
+	head = FrontPop(head);
+	Print(head);
+	head = BackPop(head);
+	Print(head);
+	head = reverseList(head);
+	Print(head);
 }
 int main()
 {

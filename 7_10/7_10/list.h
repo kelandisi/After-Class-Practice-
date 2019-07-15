@@ -4,8 +4,13 @@
 #include<assert.h>
 typedef struct Node
 {
-	int val;
-	struct Node* next;
+	int val;			//链表中有两个重要的信息，一个是val，另一个是保存的下一个结点的线索
+	struct Node *next;	//就是保存的下一个结点的线索
 }Node;
-Node * ListPushFront(Node *head, int val);
-Node * ListPushBack(Node *head, int val);
+void Print(Node* head);
+Node* FrontPush(Node* head, int val);
+Node* BackPush(Node* head, int val);
+Node* FrontPop(Node* head);
+Node* BackPop(Node* head);
+Node* reverseList(Node* head);
+
