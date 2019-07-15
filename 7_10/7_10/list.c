@@ -72,7 +72,7 @@ Node* reverseList(Node* head)
 	{
 		Node* next = cur->next;
 		cur->next = rHead;
-		rHead = cur;
+		rHead = cur;				
 		cur = next;
 	}
 	return rHead;
