@@ -1,7 +1,42 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<stdlib.h>
-int Feibo(int n)
+#include<string.h>
+void tihuanchar(char *src)
+{
+	int OldLen = 0;                  //原字符串长度
+	int NewLen = 0;                  //新字符串长度
+	int BlackNum = 0;                //空格数量
+	int NewBack = 0;                 //新字符串尾部
+	int OldBack = 0;                 //原字符串尾部
+	while (src[OldLen] != '\0')
+	{
+		if (src[OldLen] == ' ')
+		{
+			BlackNum++;
+		}
+		OldLen++;
+	}
+	NewLen = OldLen + BlackNum * 2;
+	OldBack = OldLen - 1;
+	NewBack = NewLen - 1;
+	while (OldBack != 0)
+	{
+		if (src[OldBack] == ' ')
+		{
+			src[NewBack--] = '0';
+			src[NewBack--] = '2';
+			src[NewBack] = '%';
+		}
+		else
+		{
+			src[NewBack] = src[OldBack];
+		}
+		OldBack--;
+		NewBack--;
+	}
+}
+int Feibo(int n)//非递归求解斐波那切数列
 {
 	int a = 1;
 	int b = 1;
@@ -21,6 +56,17 @@ int Feibo(int n)
 		}
 	}
 	return result;
+}
+int Feibo1(int n)//递归求解斐波那切数列
+{
+	if (n < 0)
+	{
+		printf("输入错误！\n");
+	}
+	else if (n == 1 || n == 2)
+		return 1;
+	else
+		return Feibo1(n - 2) + Feibo1(n - 1);
 }
 int main()
 {
@@ -80,12 +126,14 @@ int main()
 	////int b = sizeof(acHello);
 	//printf("%d ", a);
 
-
-	//非递归求解斐波那切数列
-	int n = 0;
-	scanf("%d", &n);
-	int ret = Feibo(n);
-	printf("%d", ret);
+	//int n = 0;
+	char str[60] = "abc defgx yz";
+	//scanf("%d", &n);
+	//int ret = Feibo(n);
+	//int ret = Feibo1(n);
+	//printf("%d", ret);
+	tihuanchar(str);
+	printf("%s", str);
 	system("pause");
 	return 0;
 }
