@@ -1,121 +1,43 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include"main.h"
-void printseq(Seqlist *seq)
+using namespace std;
+void testfun1()
 {
-	for (int i = 0; i < seq->size; i++)
-	{
-		cout<<seq->array[i] << " ";
-	}
-	cout << endl;
+	int a[] = { 1,22,9,10,0,51,4,8,21,2 };
+	int size = sizeof(a) / sizeof(int);
+	BubbleSort(a,size);						//冒泡排序				
+	Print(a,size);
+	int ret = BinarySearch(a, size,4);		//二分查找
+	cout << "找到了下标是" << ret << endl;
 }
-void print(int *a, int size)
+void testseq()
 {
-	for (int i = 0; i < size; i++)
-	{
-		printf("%d ", a[i]);
-	}
-	printf("\n");
-}
+	Seqlist seqlist;
+	Initseq(&seqlist);						//初始化顺序表
+	Frontpush(&seqlist, 2);					//头插
+	Frontpush(&seqlist, 2);							
+	Frontpush(&seqlist, 2);
+	Frontpush(&seqlist, 1);
+	Printseq(&seqlist);						//打印顺序表
+	Bcakpush(&seqlist, 4);					//尾插				
+	Bcakpush(&seqlist, 5);
+	Bcakpush(&seqlist, 6);
+	Printseq(&seqlist); 
+	Insert(&seqlist, 520, 2);				//根据坐标插入	
+	Printseq(&seqlist);
+	Delete(&seqlist, 2);					//根据坐标删除		
+	Printseq(&seqlist);
+	//Deleteoneval(&seqlist, 2);				//删除第一个val
+	//Printseq(&seqlist);
+	DeleteAllval(&seqlist, 2);
+	Printseq(&seqlist);
+	Distroy(&seqlist);
 
-void swap(int &i, int &j)
-{
-	int t = i;
-	i = j;
-	j = t;
 }
-void bubblesort(int *a, int size)
+int main()
 {
-	for (int i = 0; i < size - i; i++)
-	{
-		int flag = 1;
-		for (int j = 0; j < size - i - 1; j++)
-		{
-			if (a[j] > a[j + 1])
-			{
-				swap(a[j], a[j+1]);
-				flag = 0;
-			}
-		}
-		if (flag == 1)
-		{
-			break;
-		}
-	}
-}
-
-int binarysearch(int *a, int size, int val)
-{
-	int left = 0;
-	int right = size-1;
-	while (left < right)
-	{
-		int mid = (right+left)/2;
-		if (val == a[mid])
-			return mid;
-		else if (val < a[mid])
-			right = mid;
-		else
-			left = mid + 1;
-	}
-	return -1;
-}
-
-void seqinit(Seqlist *seq)
-{
-	seq->array = (int*)malloc(sizeof(int)*16);
-	seq->capcity = 16;
-	seq->size = 0;
-}
-
-void pushhead(Seqlist *seq, int val)
-{
-	for (int i = seq->size-1; i >= 0; i--)
-	{
-		seq->array[i + 1] = seq->array[i];
-	}
-	seq->array[0] = val;
-	seq->size++;
-}
-
-void pushback(Seqlist *seq, int val)
-{
-	seq->array[seq->size] = val;
-	seq->size++;
-}
-
-void insert(Seqlist *seq, int index, int val)
-{
-	if (index<0 || index>seq->size)
-	{
-		cout << "下标不合法！" << endl;
-	}
-	for (int i = seq->size-1; i >= index; i--)
-	{
-		seq->array[i + 1] = seq->array[i];
-	}
-	seq->array[index] = val;
-	seq->size++;
-}
-
-void pophead(Seqlist *seq)
-{
-	for (int i = 0; i < seq->size-1; i++)
-	{
-		seq->array[i] = seq->array[i + 1];
-	}
-	seq->size--;
-}
-
-void popback(Seqlist *seq)
-{
-	seq->size--;
-}
-
-void deleteseq(Seqlist *seq,int index)
-{
-	for (int i = index; i < seq->size-1; i++)
-	{
-		seq->array[i] = seq->array[i + 1];
-	}
-	seq->size--;
+	testfun1();
+	testseq();
+	system("pause");
+	return 0;
 }
