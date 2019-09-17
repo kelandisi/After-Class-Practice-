@@ -26,7 +26,7 @@ void SeqlistRemove(Seqlist *seq, int val)
 	{
 		DeleteSeqlist(seq, index);
 	}
-}
+}	
 void SeqlistRemoveAll(Seqlist *seq, int val)
 {
 	int *extra = (int *)malloc(sizeof(int)* seq->size);
