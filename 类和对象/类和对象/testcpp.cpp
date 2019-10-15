@@ -5,75 +5,88 @@ using namespace std;
 class Date
 {
 public:
-	Date(int year=1999, int mounth=1, int day=1)
+	Date(int year=1999,int month=1, int day=1)
 		:_year(year)
-		, _mounth(mounth)
-		, _day(day)
-	{}
-	
+		,_month(month)
+		,_day(day)
+	{
+		if (!((year > 0) && (month > 0 && month < 13) && (day>0 && day < GetDayofMonth(year, month))))
+		{
+			_year = 1900;
+			_month = 1;
+			_day = 1;
+		}
+	}
 
-	Date  operator+(int day)
-	{
-		Date tmp(*this);
-		tmp._day += day;
-		return tmp;
-	}
-	Date operator- (int day)
-	{
-		Date tmp(*this);
-		tmp._day -= day;
-		return tmp;
-	}
-	bool operator==(const Date& d)
-	{
-		return _year == d._year&&
-			_mounth == d._mounth&&
-			_day == d._day;
-	}
-	bool operator!=(const Date& d)
-	{
-		return !(*this == d);
-	}
-	Date & operator=(const Date& d)
+	Date(const Date& d)
+		:_year(d._year)
+		,_month(d._month)
+		,_day(d._day)
+	{}
+
+	Date &operator=(Date& d)
 	{
 		if (this != &d)
 		{
 			_year = d._year;
-			_mounth = d._mounth;
-			_day = d._day;	
-		}	
+			_month = d._month;
+			_day = d._day;
+		}
 		return *this;
 	}
-	Date & operator++()//前置++
+	
+	bool operator==(const Date& d)const
 	{
-		_day += 1;
-		return *this;
+		return _year == d._year &&
+			   _month == d._month &&
+			   _day == d._day;
 	}
-	Date operator++(int)//后置++
+
+	bool operator!=(const Date& d)const
 	{
+		return !(*this == d);
+	}
+	
+	Date operator+(int day)
+	{
+		if (day < 0)
+		{
+			return *this - (0 - day);
+		}
 		Date tmp(*this);
-		_day += 1;
-		return tmp;
+		tmp._day += day;
+		// 日期中_day非法
+
 	}
-	void Print()
+	bool IsLeapYear(int year)
 	{
-		cout << _year << "-" << _mounth << "-" << _day << endl;
+		if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+		{
+			return true;
+		}
+		return false;
 	}
+	int GetDayofMonth(int year, int month)
+	{
+		int days[] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+		if (2 == month && IsLeapYear(year))
+		{
+			days[month]+=1;
+		}
+		return days[month];
+	}
+
+
 
 private:
 	int _year;
-	int _mounth;
+	int _month;
 	int _day;
 };
-
 int main()
 {
-	Date d1;
-	//Date d2(d1);
-	d1 = d1 + 10;
-	d1 = d1 - 5;
-	d1 = 100;
-	d1.Print();
+	Date d(2000,1,1);
 	system("pause");
 	return 0;
 }
+
