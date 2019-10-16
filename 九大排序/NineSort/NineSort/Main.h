@@ -3,6 +3,7 @@
 void Swap(int &x, int &y);
 void Print(int* array, int size);
 void BubbleSort(int* array, int size);
-void InsertSortGap(int* array, int size, int gap);
+void InsertSort(int* a, int size, int gap);
 void ShellSort(int* array, int size);
+void SelectSort(int* a, int size);
 

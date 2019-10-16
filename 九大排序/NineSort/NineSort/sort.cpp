@@ -41,7 +41,7 @@ void InsertSortGap(int* array, int size, int gap)   //直接插入排序
 	}
 }
 
-void ShellSort(int* array, int size)
+void ShellSort(int* array, int size)				//希尔排序
 {
 	int gap = size;
 	while (1)
@@ -54,3 +54,21 @@ void ShellSort(int* array, int size)
 		}	
 	}
 }
+	
+void SelectSort(int* a, int size)					//直接选择排序
+{
+	for (int i = 0; i < size; i++)
+	{
+		int max = 0;
+		for (int j = 1; j < size - i; j++)
+		{
+			if (a[j] > a[max])
+			{
+				max=j;
+			}
+		}
+		Swap(a[max], a[size - i - 1]);
+	}
+}
+
+
