@@ -1,4 +1,4 @@
-﻿生成启动时间为 2019/10/16 22:11:37。
+﻿生成启动时间为 2019/10/21 19:23:20。
      1>项目“E:\比特科技\代码\After-Class-Practice-\九大排序\NineSort\NineSort\NineSort.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          D:\vs2015\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt sort.cpp
@@ -11,4 +11,4 @@
 
 已成功生成。
 
-已用时间 00:00:00.90
+已用时间 00:00:00.76

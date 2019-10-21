@@ -5,7 +5,7 @@ void Test()
 	int array[10] = { 9,8,5,1,4,6,3,7,8,0 };
 	int size = sizeof(array) / sizeof(int);
 	//BubbleSort(array,size); 
-	//InsertSort(array, size,gap);
+	//InsertSort(array, size);
 	//ShellSort(array, size);
 	SelectSort(array, size);
 	Print(array, size);

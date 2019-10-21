@@ -41,6 +41,7 @@ void InsertSortGap(int* array, int size, int gap)   //直接插入排序
 	}
 }
 
+
 void ShellSort(int* array, int size)				//希尔排序
 {
 	int gap = size;
@@ -54,6 +55,7 @@ void ShellSort(int* array, int size)				//希尔排序
 		}	
 	}
 }
+
 	
 void SelectSort(int* a, int size)					//直接选择排序
 {
@@ -70,5 +72,6 @@ void SelectSort(int* a, int size)					//直接选择排序
 		Swap(a[max], a[size - i - 1]);
 	}
 }
+
 
 
