@@ -1,4 +1,4 @@
-﻿生成启动时间为 2019/10/14 20:52:05。
+﻿生成启动时间为 2019/10/21 22:23:26。
      1>项目“E:\比特科技\代码\After-Class-Practice-\类和对象\类和对象\类和对象.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          D:\vs2015\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt testcpp.cpp
@@ -10,4 +10,4 @@
 
 已成功生成。
 
-已用时间 00:00:00.89
+已用时间 00:00:00.80
