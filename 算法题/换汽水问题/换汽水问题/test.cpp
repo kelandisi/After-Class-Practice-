@@ -1,0 +1,29 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<iostream>
+using namespace std;
+int num = 0;
+void fun(int n)
+{
+	if (n < 2)
+		return;
+	if (n == 2)
+		num++;
+	if (n > 2)
+	{
+		num++;
+		fun(n - 2);
+	}
+		
+}
+int main()
+{
+	int n = 0;
+	while (cin >> n)
+	{
+		fun(n);
+		cout << num << endl;
+		num = 0;
+	}
+	system("pause");
+	return 0;
+}
