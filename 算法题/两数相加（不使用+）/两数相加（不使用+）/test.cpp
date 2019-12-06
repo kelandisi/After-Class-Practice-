@@ -1,34 +1,32 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<iostream>
 using namespace std;
-//class UnusualAdd
-//{
+//class Solution {
 //public:
-//	 int addAB(int A, int B)		//用指针偏移量来进行计算
+//	int Add(int num1, int num2)
 //	{
-//		char*C = (char*)A;
-//		return (int)&C[B];
+//		char*c = (char*)num1;
+//		return (int)&c[num2]; //相当与c+sizeof（char*）num2
 //	}
 //};
 //int main()
 //{
-//	UnusualAdd A;
-//	cout << A.addAB(3, 5);
+//	Solution A;
+//	cout << A.Add(1, 5);
 //	system("pause");
 //	return 0;
 //}
 
 class UnusualAdd {
 public:
-	int addAB(int A, int B) {
-		while (A)
-		{
-			int temp = B;
-			B = A^B;
-			A = A&temp;
-			A <<= 1;
-		}
-		return B;
+	int addAB(int a, int b) 
+	{
+		if (b == 0)
+			return a;
+		int constSite = a^b;		//计算出两数不变的位数
+		int VariableSite = a&b;		//计算出两数需要进位的位数
+		return (addAB(constSite, VariableSite << 1));//递归求解
+
 	}
 };
 int main()
