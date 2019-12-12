@@ -1,0 +1,43 @@
+#include<iostream>
+#include<string>
+#include<unordered_map>
+using namespace std;
+
+class Solution {
+public:
+	int romanToInt(string s) {
+		unordered_map<char, int> mp;
+		mp['I'] = 1;
+		mp['V'] = 5;
+		mp['X'] = 10;
+		mp['L'] = 50;
+		mp['C'] = 100;
+		mp['D'] = 500;
+		mp['M'] = 1000;
+
+		int res = 0;
+		int pos = 0;
+		for (int i = 0; i<s.size() - 1; i++)
+		{
+			if (mp[s[i]]<mp[s[i + 1]])
+				res = res - mp[s[i]];   //res-=mp[s[i]]
+			else
+				pos = mp[s[i]] + pos;	//res+=mp[s[i]]
+		}
+		pos += mp[s.back()];
+		return pos + res;
+
+	}
+};
+
+
+int main()
+{
+	string str;
+	cin >> str;
+	Solution s;
+	cout<<s.romanToInt(str);
+
+	system("pause");
+	return 0;
+}
