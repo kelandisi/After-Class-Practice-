@@ -1,50 +1,50 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-
-class Parenthesis {
-
+#include<iostream>
+#include<stack>
+#include<string>
+using namespace std;
+class Solution
+{
 public:
-
-	bool chkParenthesis(string A, int n) {
-
-		// write code here
-
-		int l = 0; //×óÀ¨ºÅÊý
-
-		for (int i = 0; i < A.length(); i++)
-
+	bool isValid(string s)
+	{
+		stack<char> st;
+		for (int i = 0; i < s.size(); ++i)
 		{
-
-			char c = A[i];
-
-			if (c == '(') {
-
-				l++;
-
-			}
-			else if (c == ')') {
-
-				if (l > 0) {
-
-					l--;
-
-				}
-				else {
-
-					return false;
-
-				}
-
-			}
-			else {
-
+			if (st.empty() && (s[i] == ')' || s[i] == '}' || s[i] == ']'))
 				return false;
-
+			if ((s[i] == ')' || s[i] == '}' || s[i] == ']'))
+			{
+				if (s[i] - st.top() == 1 || s[i] - st.top() == 2)
+				{
+					st.pop();
+				}
+				else
+					return false;
 			}
-
+			else
+			{
+				st.push(s[i]);
+			}
 		}
-
-		return l == 0;
-
+		if (st.empty())
+			return true;
+		else
+			return false;
 	}
-
 };
+int main()
+{
+	Solution s;
+	string str;
+	while (cin>>str)
+	{
+		if (s.isValid(str))
+			cout << "true";
+		else
+			cout << "false";
+	}
+	system("pause");
+	return 0;
+}
+
