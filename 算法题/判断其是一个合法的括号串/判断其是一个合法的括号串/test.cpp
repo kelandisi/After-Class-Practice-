@@ -40,9 +40,9 @@ int main()
 	while (cin>>str)
 	{
 		if (s.isValid(str))
-			cout << "true";
+			cout << "true"<<endl;
 		else
-			cout << "false";
+			cout << "false"<<endl;
 	}
 	system("pause");
 	return 0;
