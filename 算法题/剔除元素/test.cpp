@@ -4,18 +4,17 @@
 using namespace std;
 class Solution {
 public:
-	int removeElement(vector<int>& nums, int val) {
-		int i = 0;
-		for (int j = 0; j < nums.size(); j++)
+	int removeElement(vector<int>& nums) {
+		int j = 0;
+		for (int i = 1; i<nums.size(); i++)
 		{
-			if (nums[j] != val)
+			if (nums[i] != nums[j])
 			{
-				nums[i] = nums[j];//让数组中元素变为现有元素
-				i++;
+				j++;
+				nums[j] = nums[i];
 			}
-				
 		}
-		return i;
+		return j + 1;
 	}
 };
 
@@ -23,16 +22,14 @@ int main()
 {
 	Solution s;
 	vector<int> arr;
-	int val = 0;
 	int a = 0;
-	while (cin>>a)
+	while (cin >> a)
 	{
 		arr.push_back(a);
 		if (cin.get() == '\n')//如果是回车符则跳出循环
 			break;
 	}
-	cin >> val;
-	int ret = s.removeElement(arr, val);
+	int ret = s.removeElement(arr);
 	cout << ret;
 	system("pause");
 	return 0;
