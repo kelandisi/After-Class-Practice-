@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="1530,741">
+    <VerticalLayout width="60" height="30" bkimage="skin\9c04073dbfd9ac11454424306b198fbf.jpg">
+        <HorizontalLayout width="1527" height="44" bkcolor="#FFE9FFFF">
+            <Button name="btn_min" float="true" pos="1439,6,0,0" width="35" height="34" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;skin\timg_WPS图片.jpg&apos; source=&apos;0,0,40,51&apos;" hotimage="file=&apos;skin\timg_WPS图片.jpg&apos; source=&apos;40,0,80,51&apos;" pushedimage="file=&apos;skin\timg_WPS图片.jpg&apos; source=&apos;80,0,110,49&apos;" />
+            <Button name="btn_close" float="true" pos="1484,5,0,0" width="35" height="34" bkcolor="#FFA0FFFF" bkcolor2="#0000FFFF" bordercolor="#0000FFFF" focusbordercolor="#0000FFFF" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="skin\normal_WPS图片.jpg" hotimage="skin\push_WPS图片.jpg" pushedimage="skin\hot_WPS图片.jpg" />
+        </HorizontalLayout>
+        <HorizontalLayout width="1527" height="68">
+            <Combo name="combo_select" text="图片" float="true" pos="20,12,0,0" width="183" height="47" bkimage="skin\下拉框_WPS图片.jpg" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" dropboxsize="0,150">
+                <ListLabelElement text="图片" selected="true"/>
+                <ListLabelElement text="视频" />
+            </Combo>
+            <Edit name="Edit" float="true" pos="219,15,0,0" width="438" height="48" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" readonly="true" />
+            <Button name="btn_load" text="加载" float="true" pos="671,15,0,0" width="71" height="39" bkcolor="#FFA0FFFF" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" pushedimage="skin\9c04073dbfd9ac11454424306b198fbf.jpg" />
+            <Button name="btn_addsrt" text="提取SRT" float="true" pos="793,15,0,0" width="71" height="39" bkcolor="#FF00FFFF" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+            <Button name="btn_write" text="写入SRT" float="true" pos="870,15,0,0" width="71" height="39" bkcolor="#FF00FFFF" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+            <Button name="btn_tiqu" text="提取视频" float="true" pos="1024,15,0,0" width="71" height="39" bkcolor="#FF00FFFF" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+            <Button name="btn_shaolu" text="烧录" float="true" pos="1104,15,0,0" width="71" height="39" bkcolor="#FF00FFFF" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+            <Button name="btn_getgif" text="生成GIF" float="true" pos="1187,15,0,0" width="71" height="39" bkcolor="#FF00FFFF" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+        </HorizontalLayout>
+        <HorizontalLayout width="1530" height="83">
+            <Label text="Start：" float="true" pos="39,26,0,0" width="55" height="41" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            <Label text="End：" float="true" pos="412,28,0,0" width="38" height="41" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            <Button name="but_cut" text="截取" float="true" pos="763,31,0,0" width="71" height="39" bkcolor="#FFA0FFFF" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" pushedimage="skin\9c04073dbfd9ac11454424306b198fbf.jpg" />
+            <Edit name="edit_start" float="true" pos="114,27,0,0" width="277" height="42" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            <Edit name="edit_end" float="true" pos="458,27,0,0" width="277" height="42" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+        </HorizontalLayout>
+        <VerticalLayout width="844" height="535">
+            <List name="list_str" width="827" height="520" itemtextcolor="#FF000000" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" headerbkimage="List/list_header_bg.png">
+                <ListHeader name="domain" bkimage="List/list_header_bg.png">
+                    <ListHeaderItem text="时间" width="40" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" hotimage="List/list_header_hot.png" pushedimage="List/list_header_pushed.png" sepimage="List/list_header_sep.png" />
+                    <ListHeaderItem text="文本" width="84" height="23" minwidth="16" textcolor="#FF000000" sepwidth="1" align="center" hotimage="List/list_header_hot.png" pushedimage="List/list_header_pushed.png" sepimage="List/list_header_sep.png" />
+                </ListHeader>
+            </List>
+        </VerticalLayout>
+        <VerticalLayout float="true" pos="874,199,0,0" width="637" height="527">
+            <Edit name="edit_word" float="true" pos="50,12,0,0" width="543" height="426" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            <Button name="btn_common" text="修改" float="true" pos="275,451,0,0" width="60" height="30" bkcolor="#FFFF0000" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+        </VerticalLayout>
+    </VerticalLayout>
+</Window>
