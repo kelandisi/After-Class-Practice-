@@ -34,26 +34,28 @@ public:
 	}
 
 };
-
 int main()
 {
 	Solution s;
 	vector<int> digits;
 	
 	int n = 0;
-	while (cin>>n)
+	while (1)
 	{
-		digits.push_back(n);
-		if (cin.get() == '\n')
-			break;		
-	}
-	vector<int> ret  = s.plusOne(digits);
-	
-	for (int i = 0; i < ret.size(); i++)
-	{
-		cout << ret[i]<<" ";
-	}
+		while (cin >> n)
+		{
+			digits.push_back(n);
+			if (cin.get() == '\n')
+				break;
+		}
+		vector<int> ret = s.plusOne(digits);
 
+		for (int i = 0; i < ret.size(); i++)
+		{
+			cout << ret[i] << " ";
+		}
+	}
+	
 	system("pause");
 	return 0;
 }
