@@ -1,3 +1,1 @@
-﻿  test.cpp
-e:\比特科技\代码\after-class-practice-\算法题\反转元音字母\test.cpp(45): warning C4018: “<”: 有符号/无符号不匹配
-  反转元音字母.vcxproj -> E:\比特科技\代码\After-Class-Practice-\算法题\反转元音字母\Debug\反转元音字母.exe
+﻿LINK : fatal error LNK1104: 无法打开文件“E:\比特科技\代码\After-Class-Practice-\算法题\反转元音字母\Debug\反转元音字母.exe”
