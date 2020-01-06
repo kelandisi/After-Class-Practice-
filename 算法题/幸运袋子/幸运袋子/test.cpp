@@ -2,9 +2,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-
 using namespace std;
-
 int  getLuckBox(vector<int> x, size_t n, size_t pos, int sum, int multi)
 {
 	int count = 0;
@@ -41,7 +39,6 @@ int  getLuckBox(vector<int> x, size_t n, size_t pos, int sum, int multi)
 
 	return count;
 }
-
 int main()
 {
 	size_t n;
@@ -54,12 +51,9 @@ int main()
 			cin >> tmp;
 			x.push_back(tmp);
 		}
-
 		//∞¥…˝–Ú≈≈–Ú
 		sort(x.begin(), x.end());
-
 		cout << getLuckBox(x, n, 0, 0, 1)<<endl;
 	}
-
 	return 0;
 }
