@@ -45,7 +45,6 @@ public:
 			return str;
 	}
 };*/
-
 //采用位运算的解法，巧妙
 class Solution {
 public:
