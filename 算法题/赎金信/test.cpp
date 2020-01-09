@@ -18,14 +18,14 @@ int main()
 	Solution s;
 	string str1;
 	string str2;
-	cin >> str1;
-	cin >> str2;
-	if (s.canConstruct(str1, str2))
+	while (cin>>str1,cin>>str2)
 	{
-		cout << "true" << endl;
+		if (s.canConstruct(str1, str2))
+			cout << "true" << endl;
+		else
+			cout << "false" << endl;
 	}
-	else
-		cout << "false" << endl;
+	
 	system("pause");
 	return 0;
 }
