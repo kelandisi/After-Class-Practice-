@@ -1,0 +1,5 @@
+﻿  test.cpp
+e:\比特科技\代码\after-class-practice-\算法题\字符串中唯一的字符\test.cpp(9): warning C4018: “<”: 有符号/无符号不匹配
+e:\比特科技\代码\after-class-practice-\算法题\字符串中唯一的字符\test.cpp(13): warning C4018: “<”: 有符号/无符号不匹配
+e:\比特科技\代码\after-class-practice-\算法题\字符串中唯一的字符\test.cpp(18): warning C4715: “Solution::firstUniqChar”: 不是所有的控件路径都返回值
+  字符串中唯一的字符.vcxproj -> E:\比特科技\代码\After-Class-Practice-\算法题\字符串中唯一的字符\Debug\字符串中唯一的字符.exe
