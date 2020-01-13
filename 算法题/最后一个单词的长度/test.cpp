@@ -5,8 +5,8 @@ using namespace std;
 class Solution {
 public:
 	int lengthOfLastWord(string s) {
-		//return s.substr(s.rfind(' ') + 1).size();
-		int res = 0;
+		return s.substr(s.rfind(' ') + 1).size();
+		/*int res = 0;
 
 		if (s.length() == 0)
 			return 0;
@@ -22,6 +22,8 @@ public:
 			}
 		}
 		return res;
+
+		}*/
 	}
 };
 int main()
