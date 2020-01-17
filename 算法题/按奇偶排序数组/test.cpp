@@ -4,7 +4,8 @@
 using namespace std;
 class Solution {
 public:
-	vector<int> sortArrayByParity(vector<int>& A) {
+	vector<int> sortArrayByParity(vector<int>& A) 
+	{
 		int left = 0;
 		int right = A.size() - 1;
 		while (left<right)
