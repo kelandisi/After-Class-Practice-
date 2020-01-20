@@ -1,0 +1,4 @@
+﻿  test.cpp
+e:\比特科技\代码\after-class-practice-\算法题\在排序数组中查找元素的第一个和最后一个位置\test.cpp(14): warning C4018: “<”: 有符号/无符号不匹配
+e:\比特科技\代码\after-class-practice-\算法题\在排序数组中查找元素的第一个和最后一个位置\test.cpp(39): warning C4018: “<”: 有符号/无符号不匹配
+  在排序数组中查找元素的第一个和最后一个位置.vcxproj -> E:\比特科技\代码\After-Class-Practice-\算法题\在排序数组中查找元素的第一个和最后一个位置\Debug\在排序数组中查找元素的第一个和最后一个位置.exe
