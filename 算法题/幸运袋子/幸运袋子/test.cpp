@@ -29,7 +29,6 @@ int  getLuckBox(vector<int> x, size_t n, size_t pos, int sum, int multi)
 
 		sum -= x[i];
 		multi /= x[i];
-
 		//如果喝下一个位置一样，就直接跳过，不能有重复
 		while (i < n - 1 && x[i] == x[i + 1])
 		{
