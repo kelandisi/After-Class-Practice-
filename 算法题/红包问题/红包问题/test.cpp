@@ -53,7 +53,6 @@ int getValue(vector<int> gifts, int n)
 	else
 		return value;
 }
-
 int main()
 {
 	vector<int> gifts;
