@@ -30,7 +30,6 @@ int main()
 	}
 	ret = s.thirdMax(arr);
 	cout << ret;
-	system("pause");
-
+	system("pause")
 	return 0;
 }
