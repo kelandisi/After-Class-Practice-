@@ -1,7 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<iostream>
 using namespace std;
-class Solution {
+class Solution 
+{
 public:
 	int climbStairs(int n) {
 		if (n == 1) return 1;
