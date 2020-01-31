@@ -36,7 +36,6 @@ using namespace std;
 			if (cin.get() == '\n')
 				break;
 		}	
-
 		int ret= s.compress(arr);
 		cout << ret;
 
