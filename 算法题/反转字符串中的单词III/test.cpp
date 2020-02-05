@@ -32,8 +32,10 @@ int main()
 {
 	Solution s;
 	string str;
+	string ret;
 	cin >> str;
-	s.reverseWords(str);
+	ret = s.reverseWords(str);
+	cout << ret;
 	system("pause");
 	return 0;
 }
