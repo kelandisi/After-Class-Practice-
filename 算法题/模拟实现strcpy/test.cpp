@@ -4,14 +4,14 @@
 #include<assert.h>
 char *Test_strcpy(char *dest, const char *src)
 {
-	//char *tmp = dest;
+	char *tmp = dest;
 	while (*src != '\0')
 	{
 		*dest = *src;
 		dest++;
 		src++;
 	}
-	return dest;
+	return tmp;
 }
 int main()
 {
