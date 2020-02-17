@@ -1,0 +1,4 @@
+﻿  test.cpp
+e:\比特科技\代码\after-class-practice-\算法题\旋转数字\test.cpp(28): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+e:\比特科技\代码\after-class-practice-\算法题\旋转数字\test.cpp(29): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  旋转数字.vcxproj -> E:\比特科技\代码\After-Class-Practice-\算法题\旋转数字\Debug\旋转数字.exe
