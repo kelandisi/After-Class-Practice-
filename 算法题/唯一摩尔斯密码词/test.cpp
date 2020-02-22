@@ -32,7 +32,6 @@ int main()
 	Solution s;
 	int ret = s.uniqueMorseRepresentations(arr);
 	cout << ret;
-
 	system("pause");
 	return 0;
 }
