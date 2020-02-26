@@ -27,7 +27,7 @@ int main()
 	Solution s;
 	string str;
 	cin >> str;
-	s.toGoatLatin(str);
+	string ret = s.toGoatLatin(str);
 	system("pause");
 	return 0;
 }
