@@ -28,6 +28,7 @@ int main()
 	string str;
 	cin >> str;
 	string ret = s.toGoatLatin(str);
+	cout << ret;
 	system("pause");
 	return 0;
 }
