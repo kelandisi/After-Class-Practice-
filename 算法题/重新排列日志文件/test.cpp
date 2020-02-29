@@ -32,9 +32,19 @@ int main()
 {
 	Solution s;
 	string str1;
-	string str2;
-	cin >> str1 >> str2;
-	s.reorderLogFiles(str1, str2);
+	vector<string> arr;
+	vector<string> arr1;
+
+	while (cin>>str1)
+	{
+		if (cin.get() == '\n')
+			break;
+	}
+	arr1 = s.reorderLogFiles(arr);
+	for (int i = 0; i < arr1.size; i++)
+	{
+		cout << arr1[i];
+	}
 	system("pause");
 	return 0;
 }
