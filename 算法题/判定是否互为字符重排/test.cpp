@@ -25,9 +25,7 @@ int main()
 	string str2;
 	cin >> str1 >> str2;
 	if (s.CheckPermutation(str1, str2))
-	{
 		cout << "ture";
-	}
 	else
 		cout << "false";
 	system("pause");
