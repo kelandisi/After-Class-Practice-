@@ -19,7 +19,7 @@ Node* FrontPush(Node* head, int val)		//Í·²å o£¨1£©
 }
 Node* BackPush(Node* head, int val)			//Î²²å o£¨1£©
 {
-	Node* node = (Node*)malloc(sizeof(Node));
+	/*Node* node = (Node*)malloc(sizeof(Node));
 	node->val = val;
 	node->next = NULL;
 	if (head == NULL)
@@ -35,10 +35,29 @@ Node* BackPush(Node* head, int val)			//Î²²å o£¨1£©
 		}
 		last->next = node;
 	}
-	return head;
+	return head;*/
+	Node* node = (Node*)malloc(sizeof(Node));
+	node->val = val;
+	node->next = NULL;
+	if (head == NULL)
+		return node;
+	else
+	{
+		Node* cur = head;
+		while (cur->next != NULL)
+		{
+			cur = cur->next;
+		}
+		cur->next = node;
+		return head;
+	}
 }
 Node* FrontPop(Node* head)						//Í·É¾
 {
+	/*assert(head != NULL);
+	Node* next = head->next;
+	free(head);
+	return next;*/
 	assert(head != NULL);
 	Node* next = head->next;
 	free(head);
@@ -46,7 +65,7 @@ Node* FrontPop(Node* head)						//Í·É¾
 }
 Node* BackPop(Node* head)						//Î²É¾
 {
-	assert(head != NULL);
+	/*assert(head != NULL);
 	if (head->next == NULL)
 	{
 		free(head);
@@ -61,6 +80,23 @@ Node* BackPop(Node* head)						//Î²É¾
 		}
 		free(cur->next);
 		cur->next = NULL;
+	}
+	return head;*/
+	assert(head != NULL);
+	if (head->next == NULL)
+	{
+		free(head);
+		head = NULL;
+	}
+	else
+	{
+		Node* last = head;
+		while (last->next->next!=NULL)
+		{
+			last = last->next;
+		}
+		free(last->next);
+		last->next = NULL;
 	}
 	return head;
 }
