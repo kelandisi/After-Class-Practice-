@@ -102,7 +102,7 @@ Node* BackPop(Node* head)						//尾删
 }
 Node* reverseList(Node* head)
 {
-	Node* rHead = NULL;
+	/*Node* rHead = NULL;
 	Node* cur = head;
 	while (cur != NULL)
 	{
@@ -111,5 +111,73 @@ Node* reverseList(Node* head)
 		rHead = cur;				
 		cur = next;
 	}
+	return rHead;*/
+	Node* rHead = NULL;
+	Node* cur = head;
+	while (cur!=NULL)
+	{
+		Node* next = cur->next;
+		cur->next = rHead;
+		rHead = cur;
+		cur = next;
+	}
 	return rHead;
+}
+
+Node* rmoveElevents(Node* head,int val)
+{
+	//双指针法
+	/*assert(head != NULL);
+	Node* prve = head;
+	Node* cur = head->next;
+	while (cur!=NULL)
+	{
+		if (cur->val == val)
+		{
+			prve->next = cur->next;
+		}
+		else
+			prve = cur;
+		cur = cur->next;
+		
+	}
+	if (head->val == val)
+		head = head->next;
+	return head;*/
+
+	//准备一个空链表法
+	Node* rHead = NULL;
+	Node* cur = head;
+	while (cur!=NULL)
+	{
+		Node* next = cur->next;
+		if (cur->val != val)
+		{
+			//尾插
+			if (rHead == NULL)
+			{
+				cur->next = rHead;
+				rHead = cur;
+			}
+			else
+			{
+				cur->next = NULL;
+				Node* last = Getlast(rHead);
+				last->next = cur;
+			}	
+		}
+		cur = next;
+	}
+	if (head->val == val)
+		head = head->next;
+	return rHead;
+}
+Node* Getlast(Node* head)
+{
+	Node* cur = head;
+	while (cur->next!=NULL)
+	{
+		cur = cur->next;
+	}
+	return cur;
 }

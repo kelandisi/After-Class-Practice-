@@ -13,4 +13,6 @@ Node* BackPush(Node* head, int val);
 Node* FrontPop(Node* head);
 Node* BackPop(Node* head);
 Node* reverseList(Node* head);
+Node* rmoveElevents(Node* head, int val);
+Node* Getlast(Node* head);
 
