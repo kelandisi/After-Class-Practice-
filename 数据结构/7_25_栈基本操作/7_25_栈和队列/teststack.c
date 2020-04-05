@@ -14,7 +14,6 @@ void test()
 	// 出栈 
 	StackPop(&stack);
 	StackPop(&stack);
-	Print(&stack);
 	// 获取栈顶元素 
 	printf("栈顶元素为 %d\n",StackTop(&stack));
 
@@ -34,6 +33,7 @@ void test()
 
 	// 销毁栈 
 	StackDestroy(&stack);
+
 }
 int main()
 {
