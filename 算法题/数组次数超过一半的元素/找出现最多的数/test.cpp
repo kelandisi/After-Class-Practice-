@@ -42,23 +42,49 @@
 //}
 
 
-
+#include<iostream>
 #include <algorithm>
+#include <map>
 #include <vector>
+
 using namespace std;
 int MoreThanHalfNum_Solution(vector<int> numbers)
 {
-	vector<int>::iterator it = numbers.begin(); //先排序，该数字一定是中位数，
-	sort(it, numbers.end());        // 再统计该数字出现的次数，判断是否满足超过数组长度的一半
-	int mid = numbers.size() / 2;
-	int count = 0;
-	int size = numbers.size();
-	for (int i = 0; i < size; i++)
+	map <int,int> m;
+	for (int i = 0; i < numbers.size(); i++)
 	{
-		if (numbers[mid] == numbers[i])
-			count++;
-		if (count > size / 2)
-			return numbers[mid];
+		m[numbers[i]] +=1;
+		if (m[numbers[i]]>numbers.size() / 2)
+			return numbers[i];
 	}
+	return 0;
+}
+int fun(vector<int> a)
+{
+	int count = 0;
+	sort(a.begin(), a.end());
+	for (int i = 0; i < a.size(); i++)
+	{
+		int mid = a.size() / 2;
+		if (a[i] == a[mid])
+			count++;
+		if (count > a.size() / 2)
+			return a[i];
+	}
+	return 0;
+}
+int main()
+{
+	vector<int> arr;
+	int a = 0;
+	while (cin>>a)
+	{
+		arr.push_back(a);
+		if (cin.get() == '\n')
+			break;
+	}
+	int ret = fun(arr);
+	cout << ret;
+	system("pause");
 	return 0;
 }
