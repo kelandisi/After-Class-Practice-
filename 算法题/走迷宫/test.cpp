@@ -25,7 +25,6 @@ void dfs(int x, int y)
 int main()
 {
 	char c;
-
 	while (cin >> c)
 	{
 		arr1[0][0] = c;
