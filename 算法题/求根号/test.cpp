@@ -1,7 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<iostream>
 using namespace std;
-double sqrt1(double x) {
+double sqrt1(double x) 
+{
 	double left = 0.0;
 	double right = x;
 	double a = 0.000001;
