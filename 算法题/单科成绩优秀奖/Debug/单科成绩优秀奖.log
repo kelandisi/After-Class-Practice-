@@ -1,0 +1,4 @@
+﻿  test.cpp
+e:\比特科技\代码\after-class-practice-\算法题\单科成绩优秀奖\test.cpp(13): warning C4244: “=”: 从“__int64”转换到“int”，可能丢失数据
+e:\比特科技\代码\after-class-practice-\算法题\单科成绩优秀奖\test.cpp(17): warning C4244: “=”: 从“__int64”转换到“int”，可能丢失数据
+  单科成绩优秀奖.vcxproj -> E:\比特科技\代码\After-Class-Practice-\算法题\单科成绩优秀奖\Debug\单科成绩优秀奖.exe
