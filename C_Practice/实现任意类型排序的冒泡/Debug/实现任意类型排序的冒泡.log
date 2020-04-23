@@ -1,0 +1,5 @@
+﻿  test.cpp
+e:\比特科技\代码\after-class-practice-\c_practice\实现任意类型排序的冒泡\test.cpp(30): warning C4018: “<”: 有符号/无符号不匹配
+e:\比特科技\代码\after-class-practice-\c_practice\实现任意类型排序的冒泡\test.cpp(45): warning C4018: “<”: 有符号/无符号不匹配
+e:\比特科技\代码\after-class-practice-\c_practice\实现任意类型排序的冒泡\test.cpp(47): warning C4018: “<”: 有符号/无符号不匹配
+  实现任意类型排序的冒泡.vcxproj -> E:\比特科技\代码\After-Class-Practice-\C_Practice\实现任意类型排序的冒泡\Debug\实现任意类型排序的冒泡.exe
