@@ -128,6 +128,48 @@ char* My_strstr(const char *str1, const char* str2)
 	}
 }
 
+
+
+//模拟实现memcpy
+void *My_memcpy(void *dest, const void *src, int count)
+{
+	void *tmp = dest;
+	assert(dest != NULL);
+	assert(src != NULL);
+	while (count--)
+	{
+		*(char*)dest = *(char*)src;
+		dest = (char*)dest + 1;
+		src = (char*)src + 1;
+	}
+	return tmp;
+}
+
+
+//模拟实现memmove
+void *My_memmove(void *dest, const void *src, int count)
+{
+	void *tmp = dest;
+	assert(dest != NULL);
+	assert(src != NULL);
+	if (dest < src)
+	{
+		while (count--)
+		{
+			*(char*)dest = *(char*)src;
+			dest = (char*)dest + 1;
+			src = (char*)src + 1;
+		}
+	}
+	else
+	{
+		while (count--)
+		{
+			*((char*)dest + count) = *((char*)src +count);			
+		}
+	}
+	return tmp;
+}
 int main()
 {
 	//char str[15] = "abcdaaaa";
@@ -136,11 +178,18 @@ int main()
 	//My_strncpy(str, "hello",6);
 	//My_strcat(str, "Hello");
 	//My_strncat(str, "Hello", 6);
-	char *p1 = "abcdef";
+	/*char *p1 = "abcdef";
 	char *p2 = "abcdabcdefndawn";
-	cout<< My_strstr(p2,p1);
+	cout<< My_strstr(p2,p1);*/
+	int arr1[] = { 1,2,3,4,5,6,7,8,9,10 };
+	int arr2[20] = { 0 };
+	//memcpy(arr2, arr1, sizeof(arr1));
 
-
+	My_memmove(arr1 + 2, arr1,16);
+	for (int i = 0; i < sizeof(arr1) / sizeof(int); i++)
+	{
+		cout << arr1[i]<<endl;
+	}
 	system("pause");
 	return 0;
  }
