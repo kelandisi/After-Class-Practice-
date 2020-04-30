@@ -18,49 +18,50 @@
 	正整数m，表示罗汉塔的高度。
 	*/
 
-	#include<iostream>
-	#include<vector> 
-	#include<algorithm>
-	using namespace std;
-	struct people
-	{
-		int id;
-		int weight;
-		int height;
-	};
+#include<iostream>
+#include<vector> 
+#include<algorithm>
+using namespace std;
+struct people
+{
+	int id;
+	int weight;
+	int height;
+};
 
-	bool cmp(people p1, people p2)
+bool cmp(people p1, people p2)
+{
+	if (p1.weight != p2.weight)
+		return p1.weight < p2.weight;
+	else
+		return p1.height > p2.height;
+}
+int main()
+{
+	int n;
+	while (cin >> n)
 	{
-		if (p1.weight != p2.weight)
-			return p1.weight < p2.weight;
-		else
-			return p1.height > p2.height;
-	}
-	int main()
-	{
-		int n;
-		while (cin >> n)
+		vector <people> v(n);
+		for (int i = 0; i <n ; i++)
 		{
-			vector <people> v(n);
-			for (int i = 0; i <n ; i++)
+			cin >> v[i].id >> v[i].weight >> v[i].height;
+		}
+		sort(v.begin(), v.end(), cmp);
+		vector <int> dp(n, 0);
+		for (int i = 0; i < n; i++)
+		{
+			dp[i] = 1;
+			for (int j = 0; j < i; j++)
 			{
-				cin >> v[i].id >> v[i].weight >> v[i].height;
-			}
-			sort(v.begin(), v.end(), cmp);
-			vector <int> dp(n, 0);
-			for (int i = 0; i < n; i++)
-			{
-				dp[i] = 1;
-				for (int j = 0; j < i; j++)
+				if ((v[i].height >= v[j].height)&&(dp[j]+1)>dp[i])
 				{
-					if ((v[i].height >= v[j].height)&&(dp[j]+1)>dp[i])
-					{
-						dp[i] =dp[j] + 1;
-					}
+					dp[i] =dp[j] + 1;
 				}
 			}
-			cout << *max_element(dp.begin(), dp.end())<<endl;
-		}	
-		system("pause");
-		return 0;
-	}
+		}
+		cout << *max_element(dp.begin(), dp.end())<<endl;
+	}	
+	system("pause");
+	return 0;
+}
+
