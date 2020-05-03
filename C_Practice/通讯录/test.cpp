@@ -31,15 +31,19 @@ void test()
 			delcontact(&con);
 			break;
 		case SEARCH:
+			searchcontact(&con);
 			break;
 		case MODIFY:
+			modefycontact(&con);
 			break;
 		case SHOW:
 			showcontact(&con);
 			break;
 		case EMPTY:
+			emptycontact(&con);
 			break;
 		case SORT:
+			sortcontact(&con);
 			break;
 		case EXIT:
 			cout << "ÍË³ö£¡" << endl;

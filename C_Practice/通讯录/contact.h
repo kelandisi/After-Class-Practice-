@@ -41,5 +41,9 @@ void Initcontact(contact *pcon);
 void addcontact(contact *pcon);
 void delcontact(contact *pcon);
 void showcontact(contact *pcon);
+void searchcontact(contact *pcon);
+void modefycontact(contact *pcon);
+void emptycontact(contact *pcon);
+void sortcontact(contact *pcon);
 
 
