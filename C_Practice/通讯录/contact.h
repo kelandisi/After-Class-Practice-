@@ -6,7 +6,8 @@ using namespace std;
 #define MAX_AGE 20
 #define TELE_MAX 12
 #define ADDR_MAX 30
-#define MAX 1000
+#define DEFAULT_SZ 3
+#define INC_SZ 2
 
 enum action
 {
@@ -32,7 +33,8 @@ typedef struct peoinfo
 
 typedef struct contact
 {
-	peoinfo data[MAX];
+	peoinfo* data;
+	int capacity;  //容量 存放当前最大容量
 	int size;
 }contact;
 
@@ -45,5 +47,6 @@ void searchcontact(contact *pcon);
 void modefycontact(contact *pcon);
 void emptycontact(contact *pcon);
 void sortcontact(contact *pcon);
+int checkcapacity(contact *pcon);
 
 

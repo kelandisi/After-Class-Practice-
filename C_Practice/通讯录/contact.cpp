@@ -3,18 +3,46 @@
 
 void Initcontact(contact *pcon)
 {
-	memset(pcon->data, 0, sizeof(pcon->data));
 	pcon->size = 0;
+	pcon->capacity = DEFAULT_SZ;
+	pcon->data = (peoinfo*)malloc(pcon->capacity*(sizeof(peoinfo)));
+	memset(pcon->data, 0, pcon->capacity*(sizeof(peoinfo)));
 }
 
+void destroy(contact *pcon)
+{
+	assert(pcon != NULL);
+	free(pcon->data);
+	pcon->data = NULL;
+	pcon->capacity = 0;
+	pcon->size = 0;
+}
+int checkcapacity(contact *pcon)
+{
+	if (pcon->size == pcon->capacity)
+	{
+		peoinfo* ptr=(peoinfo*)realloc(pcon->data, (pcon->capacity + INC_SZ)*sizeof(peoinfo));
+		if (ptr != NULL)
+		{
+			pcon->data = ptr;
+			pcon->capacity += INC_SZ;
+			cout << "增容成功！\n";
+			return 1;
+		}			
+		else
+			return 0;
+	}
+	return 1;
+
+}
 void addcontact(contact *pcon)
 {
 
-	if (pcon->size == MAX)
+	if (checkcapacity(pcon) == 0)
 	{
-		cout << "通讯录已满，无法添加！\n";
+		cout << "增容失败！\n";
 	}
-	else
+
 	{
 		cout << "请输入名字>:";
 		cin >> pcon->data[pcon->size].name;
