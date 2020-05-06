@@ -1,5 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<iostream>
+#include<assert.h>
+#include<errno.h>
 using namespace std;
 #define MAX_NAME 20
 #define MAX_SEX 5
@@ -48,5 +50,7 @@ void modefycontact(contact *pcon);
 void emptycontact(contact *pcon);
 void sortcontact(contact *pcon);
 int checkcapacity(contact *pcon);
-
+void destroy(contact *pcon);
+void savecontact(contact *pcon);
+void loadcontact(contact *pcon);
 

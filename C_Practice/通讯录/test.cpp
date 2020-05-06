@@ -46,7 +46,8 @@ void test()
 			sortcontact(&con);
 			break;
 		case EXIT:
-			cout << "退出！" << endl;
+			destroy(&con);
+			cout << "保存文件成功！" << endl;
 			break;
 		default:
 			cout << "输入错误，请重新输入！" << endl;

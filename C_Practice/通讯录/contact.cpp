@@ -7,16 +7,56 @@ void Initcontact(contact *pcon)
 	pcon->capacity = DEFAULT_SZ;
 	pcon->data = (peoinfo*)malloc(pcon->capacity*(sizeof(peoinfo)));
 	memset(pcon->data, 0, pcon->capacity*(sizeof(peoinfo)));
+	//¶ÁÈ¡ÎÄ¼þ
+	loadcontact(pcon);
 }
 
 void destroy(contact *pcon)
 {
 	assert(pcon != NULL);
+	savecontact(pcon);
 	free(pcon->data);
 	pcon->data = NULL;
 	pcon->capacity = 0;
 	pcon->size = 0;
 }
+
+
+void loadcontact(contact *pcon)
+{
+	FILE* pf = fopen("contact.txt", "rb");
+	peoinfo temp = { 0 };
+	if (pf == NULL)
+	{
+		cout << strerror(errno);
+		return;
+	}
+	while (fread(&temp, sizeof(peoinfo), 1, pf))
+	{
+		checkcapacity(pcon);
+		pcon->data[pcon->size++] = temp;
+	}
+	fclose(pf);
+	pf = NULL;
+}
+
+void savecontact(contact *pcon)
+{
+	FILE* pf = fopen("contact.txt", "wb");
+	if (pf == NULL)
+	{
+		cout << strerror(errno);
+		return;
+	}
+	for (int i = 0; i < pcon->size; i++)
+	{
+		fwrite(pcon->data + i, sizeof(peoinfo), 1, pf);
+	}
+
+	fclose(pf);
+	pf = NULL;
+}
+
 int checkcapacity(contact *pcon)
 {
 	if (pcon->size == pcon->capacity)
