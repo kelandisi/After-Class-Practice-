@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<iostream>
 #include<vector>
+#include<unordered_set>
 using namespace std;
 
 /*给定一个整数数组和一个整数 k，判断数组中是否存在两个不同的索引 i 和 j，
