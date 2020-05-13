@@ -1,0 +1,6 @@
+﻿  test.cpp
+e:\比特科技\代码\after-class-practice-\算法题\两数之和 ii\test.cpp(12): warning C4018: “<”: 有符号/无符号不匹配
+e:\比特科技\代码\after-class-practice-\算法题\两数之和 ii\test.cpp(14): warning C4018: “<”: 有符号/无符号不匹配
+e:\比特科技\代码\after-class-practice-\算法题\两数之和 ii\test.cpp(37): warning C4018: “<”: 有符号/无符号不匹配
+e:\比特科技\代码\after-class-practice-\算法题\两数之和 ii\test.cpp(20): warning C4715: “Solution::twoSum”: 不是所有的控件路径都返回值
+  两数之和 II.vcxproj -> E:\比特科技\代码\After-Class-Practice-\算法题\两数之和 II\Debug\两数之和 II.exe
