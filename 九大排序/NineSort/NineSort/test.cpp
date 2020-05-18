@@ -10,6 +10,7 @@ void Test()
 	SelectSort(array, size);
 	Print(array, size);
 }
+
 int main()
 {
 	Test();
