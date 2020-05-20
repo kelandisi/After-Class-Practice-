@@ -4,7 +4,7 @@
 #include<algorithm>
 using namespace std;
 
-void remove_elements(vector<int> &vec)
+void remove_elements(vector<int> &vec)   //删除指定元素
 {
 	for (auto it = vec.begin(); it != vec.end();)
 	{ 
@@ -24,16 +24,32 @@ void remove_elements(vector<int> &vec)
 //	vec.erase(unique(vec.begin(), vec.end()), vec.end()); //unique将重复的元素移到末尾，返回末尾中第一个重复值的地址
 //}
 
-void remove_repeatelements(vector<int>& test)
+void remove_repeatelements(vector<int>& arr)  //删除重复元素，并且保证原顺序不变
 {
-	for (auto it = test.begin(); it != test.end();)
+	for (auto it = arr.begin(); it < arr.end();)
 	{
-		auto it1 = find(test.begin(), it, *it);    //若当前位置之前存在重复元素，删除当前元素,erase返回当前元素的下一个元素指针
+		auto it1 = find(arr.begin(), it, *it);
 		if (it1 != it)
-			it = test.erase(it);
+		{
+			it = arr.erase(it);
+		}
 		else
 			it++;
 	}
+}
+
+vector<int> remove_repeatelements1(vector<int>& arr)//新建vector保存不重复的元素
+{
+	vector <int> temp;
+	for (auto it = arr.begin(); it < arr.end(); it++)
+	{
+		auto it1 = find(arr.begin(), it, *it);
+		if (it1 == it)
+		{
+			temp.push_back(*it);
+		}
+	}
+	return temp;
 }
 
 int main()
@@ -48,11 +64,11 @@ int main()
 	}
 	//remove_elements(vec);
 	//remove_repeatelements(vec);//不保留原顺序
-	remove_repeatelements(vec);//保留原顺序
+	vector<int> ret = remove_repeatelements1(vec);//保留原顺序
 
-	for (int i = 0; i < vec.size(); ++i)
+	for (int i = 0; i < ret.size(); ++i)
 	{
-		cout << vec[i]<<" ";
+		cout << ret[i]<<" ";
 	}
 	system("pause");
 	return 0;
