@@ -62,7 +62,7 @@ int main()
 		if (cin.get() == '\n')
 			break;
 	}
-	//remove_elements(vec);
+//remove_elements(vec);
 	//remove_repeatelements(vec);//不保留原顺序
 	vector<int> ret = remove_repeatelements1(vec);//保留原顺序
 
