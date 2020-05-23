@@ -27,17 +27,17 @@ void BubbleSort(int* array, int size)	//√∞≈›≈≈–Ú
 	}
 }
 
-void InsertSortGap(int* array, int size, int gap)   //÷±Ω”≤Â»Î≈≈–Ú
+void InsertSortGap(int* a, int size)   //÷±Ω”≤Â»Î≈≈–Ú
 {
 	for (int i = 0; i < size; i++)
 	{
-		int k = array[i];
-		int j;
-		for (j = i - gap; j >= 0 && array[j]>k; j-=gap)
+		int k = a[i];
+		int j = 0;
+		for (j = i - 1; j >= 0 && a[j]>k; --k)
 		{
-			array[j + gap] = array[j];
+			a[j + 1] = a[j];
 		}
-		array[j + gap] = k;
+		a[j + 1] = k;
 	}
 }
 
@@ -48,7 +48,7 @@ void ShellSort(int* array, int size)				//œ£∂˚≈≈–Ú
 	while (1)
 	{
 		gap = gap / 2;//gap = gap/ 3 + 1
-		InsertSortGap(array, size, gap);
+		InsertSortGap(array, size);
 		if (gap == 1)
 		{
 			break;
