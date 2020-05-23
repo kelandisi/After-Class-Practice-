@@ -52,13 +52,11 @@ void BubbleSort(int array[],int size)
 */
 void InsertSort(int *a, int size)
 {
-	int j = 0;
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < size; ++i)
 	{
-		//无序区间：[i,size)
-		//有序区间：[0,i)
+		int j = 0;
 		int k = a[i];
-		for (j = i - 1; j >= 0 && k < a[j]; j--)
+		for ( j = i - 1; j >= 0 && k < a[j]; --j)
 		{
 			a[j + 1] = a[j];
 		}
@@ -304,13 +302,13 @@ int main()
 	int* tmp = (int*)calloc(size,sizeof(int)*(sizeof(array) / sizeof(int)));
 	//memset(tmp, -1, sizeof(array) / sizeof(int));
 	//BubbleSort(array,size);
-	//InsertSort(array, size);
+	InsertSort(array, size);
 	//ShellSort(array, size);
 	//SelectSort(array, size);
 	//HeapSort(array, size);
 	//QuickSort(array,size);
 	//Mergesort(array, 0, size - 1, tmp);
-	CountSort(array, size);
+	//CountSort(array, size);
 	Print(array,size);
 	system("pause");
 	return 0;
