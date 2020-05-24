@@ -2,12 +2,14 @@
 #include"Main.h"
 void Test()
 {
-	int array[10] = { 9,8,5,1,4,6,3,7,8,0 };
+	int array[5] = {3,1,4,2,5};
 	int size = sizeof(array) / sizeof(int);
 	//BubbleSort(array,size); 
-	InsertSort(array, size);
+	//InsertSort(array, size);
 	//ShellSort(array, size);
 	//SelectSort(array, size);
+	//HeapSort(array, size);
+	quickSort(array, size);
 	Print(array, size);
 }
 
