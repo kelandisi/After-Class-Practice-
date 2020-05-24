@@ -9,7 +9,7 @@ void Print(int array[],int size)
 		printf("%d ", array[i]);
 	}
 }
-Swap(int *a, int *b)
+void Swap(int *a, int *b)
 {
 	int tmp = 0;
 	tmp = *a;
@@ -142,11 +142,11 @@ void heapify(int *a, int index, int size)
 	if (a[index] >= a[max])
 		return;
 	Swap(a + index, a + max);
-	heapify(a, index, max);
+	heapify(a, max, size);
 }
 void CreateHeap(int *a, int size)
 {
-	for (int i = (size - 2) / 2; i >= 0; i--)
+	for (int i = (size -2) / 2; i >= 0; i--)
 	{
 		heapify(a, i, size);
 	}
@@ -168,7 +168,7 @@ void HeapSort(int *a, int size)
 		(2).空间复杂度：	O（n）-O（n*logn）
 		(3).稳定性：不稳定
 */
-#if 0
+#if 1
 int partition1(int *a, int left, int right)		//Hover法
 {
 	int begin = left;
@@ -194,7 +194,7 @@ int partition2(int *a, int left, int right)		//挖坑法
 {
 	int begin = left;
 	int end = right;
-	int pivot = a[right];
+	int pivot = a[end];
 	while (begin < end)
 	{
 		while (begin < end && a[begin] <= pivot)
@@ -215,7 +215,7 @@ void _QuickSort(int *a, int left, int right)
 {
 	if (left >= right)
 		return;
-	int pivotIndex = partition2(a, left, right);
+	int pivotIndex = partition1(a, left, right);
 	_QuickSort(a, left, pivotIndex-1);
 	_QuickSort(a, pivotIndex+1, right);
 }
@@ -297,16 +297,16 @@ void CountSort(int* a, int size)
 }
 int main()
 {
-	int array[] = { 11,8,9,1,4,6,3,7,2,5 };
+	int array[] = { 9, 7, 3, 5, 6, 1, 8, 4 };
 	int size = sizeof(array) / sizeof(int);
 	int* tmp = (int*)calloc(size,sizeof(int)*(sizeof(array) / sizeof(int)));
 	//memset(tmp, -1, sizeof(array) / sizeof(int));
 	//BubbleSort(array,size);
-	InsertSort(array, size);
+	//InsertSort(array, size);
 	//ShellSort(array, size);
 	//SelectSort(array, size);
 	//HeapSort(array, size);
-	//QuickSort(array,size);
+	QuickSort(array,size);
 	//Mergesort(array, 0, size - 1, tmp);
 	//CountSort(array, size);
 	Print(array,size);
