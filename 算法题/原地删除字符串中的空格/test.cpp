@@ -26,7 +26,6 @@ char * delChar(char* str, char del)
 	*left = 0;
 	return str;
 }
-
 int main()
 {
 	char del = ' ';
