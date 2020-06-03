@@ -22,7 +22,6 @@ int Fibo(int n)
 }
 
 //青蛙跳台阶问题
-
 int main()
 {
 	int n = 0;
