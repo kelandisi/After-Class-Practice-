@@ -1,0 +1,4 @@
+﻿  test.cpp
+e:\比特科技\代码\after-class-practice-\剑指offer\面试题17. 打印从1到最大的n位数\test.cpp(11): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+e:\比特科技\代码\after-class-practice-\剑指offer\面试题17. 打印从1到最大的n位数\test.cpp(27): warning C4018: “<”: 有符号/无符号不匹配
+  面试题17. 打印从1到最大的n位数.vcxproj -> E:\比特科技\代码\After-Class-Practice-\剑指Offer\面试题17. 打印从1到最大的n位数\Debug\面试题17. 打印从1到最大的n位数.exe
