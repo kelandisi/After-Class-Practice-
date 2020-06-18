@@ -17,3 +17,5 @@ public:
 		return helper(A, B) || isSubStructure(A->left, B) || isSubStructure(A->right, B);
 	}
 };
+
+
