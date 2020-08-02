@@ -1,0 +1,6 @@
+﻿  test.cpp
+e:\比特科技\代码\after-class-practice-\算法题\分苹果\test.cpp(4): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+e:\比特科技\代码\after-class-practice-\算法题\分苹果\test.cpp(10): warning C4018: “<”: 有符号/无符号不匹配
+e:\比特科技\代码\after-class-practice-\算法题\分苹果\test.cpp(17): warning C4018: “<”: 有符号/无符号不匹配
+e:\比特科技\代码\after-class-practice-\算法题\分苹果\test.cpp(23): warning C4018: “<”: 有符号/无符号不匹配
+  分苹果.vcxproj -> E:\比特科技\代码\After-Class-Practice-\算法题\分苹果\Debug\分苹果.exe
