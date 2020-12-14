@@ -159,6 +159,9 @@ int main()
 #endif
 
 //第四题：排序子序列
+
+
+#if 0
 int main()
 {
 	int n = 0;
@@ -178,6 +181,48 @@ int main()
 		}
 	}
 	cout << res;
+	system("pause");
+	return 0;
+}
+#endif
+bool fun(const char *tmp,const char *str)
+{
+	if (*tmp == '\0' && *str == '\0')
+		return true;
+	if (*tmp == '\0' || *str == '\0')
+		return false;
+
+	if (*tmp == '?')
+	{
+		return fun(tmp + 1, str + 1);
+	}
+
+	else if (*tmp == '*')
+	{
+		return fun(tmp + 1, str) || fun(tmp + 1, str + 1) || fun(tmp, str + 1);
+	}
+
+	else if (*tmp == *str)
+		return fun(tmp + 1, str + 1);
+	return false;
+
+}
+
+
+
+int main()
+{
+	string tmp;
+	string str;
+	while (cin >> tmp >> str)
+	{
+		if (fun(tmp.c_str(), str.c_str()))
+			cout << "true" << endl;
+		else
+			cout << "false" << endl;
+	}
+	
+	
 	system("pause");
 	return 0;
 }
