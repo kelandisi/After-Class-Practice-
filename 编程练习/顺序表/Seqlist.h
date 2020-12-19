@@ -89,6 +89,8 @@ public:
 	//获取最后一个元素
 	int Back();
 	//将所有元素清空
+
+	int GetElem(int i);
 	void Clear();
 	//打印顺序表
 
@@ -107,3 +109,4 @@ private:
 	int _size;
 	int _capacity;
 };
+SeqList& hebing(SeqList&l1, SeqList&l2);

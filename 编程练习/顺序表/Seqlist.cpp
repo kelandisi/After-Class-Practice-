@@ -7,7 +7,7 @@ void SeqList::PushBack(int data)
 
 void SeqList::PopBack()
 {
-	assert(_size);
+	//assert(_size);
 	_size--;
 }
 
@@ -67,4 +67,28 @@ int SeqList::Back()
 void SeqList::Clear()
 {
 	_size = 0;
+}
+
+int SeqList::GetElem(int i)
+{
+	return _data[i];
+}
+
+
+SeqList& hebing(SeqList&l1, SeqList&l2)
+{
+	SeqList tmp(l1);
+	int len = 0;
+	if (tmp.Size() > l2.Size())
+		len = tmp.Size();
+	else
+		len = l2.Size();
+	for (int i = 0; i < len; ++i)
+	{
+		if (tmp.GetElem(i) != l2.GetElem(i))
+		{
+			tmp.Insert(i+1,l2.GetElem(i));
+		}
+	}
+	return tmp;
 }
