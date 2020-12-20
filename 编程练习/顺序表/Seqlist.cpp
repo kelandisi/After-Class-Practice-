@@ -2,6 +2,7 @@
 #include"Seqlist.h"
 void SeqList::PushBack(int data)
 {
+	CheckCapacity();
 	_data[_size++] = data;
 }
 
@@ -15,7 +16,7 @@ void SeqList::Insert(int index,int data)
 {
 	if (index > _size)
 		return;
-
+	CheckCapacity();
 	for (int i = _size-1; i >= index; i--)
 	{
 		_data[i + 1] = _data[i];
@@ -69,26 +70,79 @@ void SeqList::Clear()
 	_size = 0;
 }
 
-int SeqList::GetElem(int i)
+int SeqList::GetElem(int index)
 {
-	return _data[i];
+	return _data[index];
 }
 
 
-SeqList& hebing(SeqList&l1, SeqList&l2)
+void SeqList::CheckCapacity()
 {
-	SeqList tmp(l1);
-	int len = 0;
-	if (tmp.Size() > l2.Size())
-		len = tmp.Size();
-	else
-		len = l2.Size();
-	for (int i = 0; i < len; ++i)
+	if (_size >= _capacity)
 	{
-		if (tmp.GetElem(i) != l2.GetElem(i))
+		int newcapacity = 2 * _capacity;
+		int* _ndata = new int[newcapacity];
+		for (int i = 0; i < _size; ++i)
 		{
-			tmp.Insert(i+1,l2.GetElem(i));
+			_ndata[i] = _data[i];
+		}
+		delete _data;
+		_data = _ndata;
+		_capacity = newcapacity;
+	}
+
+}
+
+int SeqList :: find(int e)
+{
+	for (int i = 0; i < _size; ++i)
+	{
+		if (_data[i] == e)
+			return 0;		
+	}
+	return e;
+}
+
+void hebing(SeqList &l1, SeqList &l2)
+{
+	
+	int e = 0;
+	for (int i = 0; i < l2.Size(); ++i)
+	{
+		e = l2.GetElem(i);
+		if (l1.find(e)!=0)
+		{
+			l1.PushBack(e);
 		}
 	}
-	return tmp;
+}
+
+int SeqList :: partition(int low, int high)
+{
+	int pivot = _data[low];
+	while (low < high)
+	{
+		while (low < high && _data[high] >= pivot)
+			high--;
+		_data[low] =_data[high];
+		while (low < high && _data[low] <= pivot)
+			low++;
+		_data[high] = _data[low];
+	}
+	_data[low] = pivot;	
+	return low;
+}
+
+void SeqList :: _SeqListQsort(int low,int high)
+{
+	if (low < high)
+	{
+		int pivot = SeqList::partition(low, high);
+		_SeqListQsort(low, pivot-1);
+		_SeqListQsort(pivot+1, high);
+	}
+}
+void SeqList :: SeqListQsort()
+{
+	SeqList::_SeqListQsort(0, _size-1);
 }

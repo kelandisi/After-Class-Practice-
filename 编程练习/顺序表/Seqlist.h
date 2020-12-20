@@ -90,10 +90,14 @@ public:
 	int Back();
 	//将所有元素清空
 
-	int GetElem(int i);
+	int GetElem(int index);
 	void Clear();
 	//打印顺序表
-
+	void CheckCapacity();
+	int partition(int low, int high);
+	void _SeqListQsort(int low, int high);
+	void SeqListQsort();
+	int find(int e);
 	friend ostream& operator<<(ostream& _cout, const SeqList&seq)
 	{
 		for (int i = 0; i < seq._size; i++)
@@ -109,4 +113,4 @@ private:
 	int _size;
 	int _capacity;
 };
-SeqList& hebing(SeqList&l1, SeqList&l2);
+void hebing(SeqList& l1, SeqList& l2);
