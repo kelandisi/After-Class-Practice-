@@ -52,7 +52,8 @@ void ListNode::popback()			//尾删
 
 void ListNode :: DeleteNode(int data)		//指定删除一个val的结点
 {
-	node* prve = head;
+	//双指针法
+	/*node* prve = head;
 	node* cur = head->next;
 	while (cur!=NULL)
 	{	
@@ -72,7 +73,17 @@ void ListNode :: DeleteNode(int data)		//指定删除一个val的结点
 		head->next = cur->next;
 	}
 	else
-		return;
+		return;*/
+
+
+	//单指针
+	node* cur = head;
+	while (cur->next != NULL && cur->next->val != data)
+		cur = cur->next;
+	if (cur->next != NULL)
+	{
+		cur->next = cur->next->next;
+	}
 }
 
 void ListNode::reverse()		//反转链表（创建新链表）
